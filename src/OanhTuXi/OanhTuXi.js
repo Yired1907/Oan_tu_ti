@@ -12,17 +12,17 @@ function OanhTuXi(props) {
     function handleClick() {
         const currentTime = Date.now();
         const elapsedTime = currentTime - lastClickTime;
-        if (elapsedTime >= 4 * 1000) { // 4 seconds in milliseconds
+        if (elapsedTime >= 1 * 1200) { // 4 seconds in milliseconds
             // Allow button click
             props.Playergame();
             setLastClickTime(currentTime);
             setButtonDisabled(true);
             setTimeout(() => {
                 setButtonDisabled(false);
-            }, 0.5 * 800);
+            }, 1 * 1200);
         } else {
             // Disallow button click
-            // alert(`Please wait ${4 - Math.floor(elapsedTime / 1000)} more seconds before clicking again.`);
+            alert(`Please wait ${1 - Math.floor(elapsedTime / 1200)} more seconds before clicking again.`);
         }
     }
 
